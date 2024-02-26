@@ -46,7 +46,7 @@ func main() {
     err := crashy.Crash()
     if err != nil {
         if errors.Is(err, crashy.Crashed) {
-            fmt.Println(err.(*errors.Error).ErrorStack())
+            fmt.Errorf("%v",err)
         } else {
             panic(err)
         }
